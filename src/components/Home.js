@@ -21,7 +21,7 @@ const Home = () => {
         >
           <Link to={`/detail/${MyData.id}`}>
           <img
-            class="w-full h-52  object-cover "
+            class="w-full h-52  object-cover"
             src={`./images/${MyData.image}`}
             alt="Sunset in the mountains"
           />
@@ -40,7 +40,7 @@ const Home = () => {
             <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-400 mr-2 mb-2">
               Discount {MyData.discount} %
             </span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm  text-gray-900 font-bold mr-2 mb-2">
               {currencyFormatter.format(MyData.discountPrice, { code: "INR" })}
             </span>
           </div>

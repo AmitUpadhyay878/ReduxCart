@@ -73,10 +73,18 @@ const initState = {
       disc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
   ],
+
+
+  product:{}
+
 };
 
 const ProductReducer = (state = initState, action) => {
+
+// console.log(typeof action.id)
   switch (action.type) {
+    case "PRODUCT":
+      return{...state,product:  state.products.find(product=>product.id === parseInt(action.id))}
     default:
       return state;
   }
