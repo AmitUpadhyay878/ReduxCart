@@ -49,6 +49,7 @@ body {
   height: 894px;
 
   /* overflow: hidden; */
+  object-fit: cover;
 }
 
 a {

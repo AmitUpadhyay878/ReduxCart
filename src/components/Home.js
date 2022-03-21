@@ -2,13 +2,13 @@ import React from "react";
 import Header from "./Header";
 import currencyFormatter from "currency-formatter";
 import { NavLink, Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BsFillCartPlusFill, BsFillCreditCard2FrontFill } from "react-icons/bs";
 const Home = () => {
   // console.log(useSelector());
   //const state = useSelector(state =>state.ProductReducer);
   const { products } = useSelector((state) => state.ProductReducer);
-  console.log(products);
+  
 
   return (
     <>
@@ -44,16 +44,22 @@ const Home = () => {
               {currencyFormatter.format(MyData.discountPrice, { code: "INR" })}
             </span>
           </div>
-          <div class="px-6 pt-4 pb-2 flex justify-around">
-            <button class="inline-block bg-blue-300 hover:bg-blue-700 hover:text-white text-red font-bold py-2 px-4 w-30 rounded-lg">
+          {/* <div class="px-6 pt-4 pb-2 flex justify-around">
+            <button class="inline-block bg-blue-300 hover:bg-blue-700 hover:text-white text-red font-bold py-2 px-4 w-30 rounded-lg"
+            
+            onClick={useDispatch({type: 'ADD_TO_CART', payload: {products} })}
+
+            >
               Add Cart
+
+             
               {/* <BsFillCartPlusFill /> */}
-            </button>{" "}
+            {/* </button>{" "}
             <button class="inline-block bg-red-300 hover:bg-red-700 hover:text-white text-red font-bold py-2 px-4 w-30 rounded-lg">
               Buy Now
-              {/* <BsFillCreditCard2FrontFill/> */}
-            </button>
-          </div>
+      </button>
+          </div>  */}
+        
         </div>
       ))}
     </>
